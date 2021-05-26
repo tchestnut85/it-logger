@@ -2,7 +2,6 @@
 	"name": "it-logger",
 	"version": "0.1.0",
 	"main": "index.js",
-	"proxy": "http://localhost:5000",
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.12.0",
@@ -55,5 +54,6 @@
 	"bugs": {
 		"url": "https://github.com/tchestnut85/it-logger/issues"
 	},
-	"homepage": "https://github.com/tchestnut85/it-logger#readme"
+	"homepage": "https://github.com/tchestnut85/it-logger#readme",
+	"proxy": "http://localhost:5000"
 }

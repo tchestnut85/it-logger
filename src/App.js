@@ -15,7 +15,7 @@ import TechListModal from './components/techs/TechListModal';
 const App = () => {
 	// Initialize Materialize JavaScript
 	useEffect(() => {
-		M.AuthInit();
+		M.AutoInit();
 	});
 
 	return (

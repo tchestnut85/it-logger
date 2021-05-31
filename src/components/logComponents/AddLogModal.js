@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { addLog } from '../../utils/actions/logActions';
 import { connect } from 'react-redux';
 
-const AddLogModal = () => {
+const AddLogModal = ({ addLog }) => {
 	const [message, setMessage] = useState('');
 	const [attention, setAttention] = useState(false);
 	const [tech, setTech] = useState('');
@@ -22,9 +22,10 @@ const AddLogModal = () => {
 			};
 
 			addLog(newLog);
+
 			M.toast({ html: `Log added by ${tech}` });
 
-			// Clear fields
+			// Clear Fields
 			setMessage('');
 			setTech('');
 			setAttention(false);
@@ -56,7 +57,9 @@ const AddLogModal = () => {
 							className='browser-default'
 							onChange={e => setTech(e.target.value)}
 						>
-							<option value=''>Select Technician</option>
+							<option value='' disabled>
+								Select Technician
+							</option>
 							<option value='Sam Smith'>Sam Smith</option>
 							<option value='John Doe'>John Doe</option>
 							<option value='Sara Wilson'>Sara Wilson</option>
@@ -73,7 +76,7 @@ const AddLogModal = () => {
 									className='filled-in'
 									checked={attention}
 									value={attention}
-									onChange={() => setAttention(!attention)}
+									onChange={e => setAttention(!attention)}
 								/>
 								<span>Needs Attention</span>
 							</label>

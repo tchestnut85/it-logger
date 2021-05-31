@@ -1,4 +1,10 @@
-import { ADD_LOG, GET_LOGS, LOGS_ERROR, SET_LOADING } from './types';
+import {
+	ADD_LOG,
+	DELETE_LOG,
+	GET_LOGS,
+	LOGS_ERROR,
+	SET_LOADING,
+} from './types';
 
 // USING REDUX THUNK TO fetch data async
 
@@ -10,10 +16,11 @@ export const addLog = log => async dispatch => {
 		const res = await fetch('/logs', {
 			method: 'POST',
 			body: JSON.stringify(log),
-			headers: { 'Content-Type': 'application/json' },
+			headers: {
+				'Content-Type': 'application/json',
+			},
 		});
 		const data = await res.json();
-		console.log('data:', data);
 
 		dispatch({
 			type: ADD_LOG,
@@ -38,6 +45,27 @@ export const getLogs = () => async dispatch => {
 		dispatch({
 			type: GET_LOGS,
 			payload: data,
+		});
+	} catch (err) {
+		dispatch({
+			type: LOGS_ERROR,
+			payload: err.response.statusText,
+		});
+	}
+};
+
+// Delete a log
+export const deleteLog = id => async dispatch => {
+	try {
+		setLoading();
+
+		await fetch(`/logs/${id}`, {
+			method: 'DELETE',
+		});
+
+		dispatch({
+			type: DELETE_LOG,
+			payload: id,
 		});
 	} catch (err) {
 		dispatch({

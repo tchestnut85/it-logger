@@ -1,0 +1,63 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "Changed hard drive on workstation 5",
+      "attention": false,
+      "date": "03-02-2021",
+      "tech": "Sam Smith"
+    },
+    {
+      "id": 2,
+      "message": "Workstation 7 not posting",
+      "attention": true,
+      "date": "03-02-2021",
+      "tech": "John Doe"
+    },
+    {
+      "id": 3,
+      "message": "Changed RAM on workstation 10",
+      "attention": false,
+      "date": "03-02-2021",
+      "tech": "Sara Wilson"
+    },
+    {
+      "message": "testing",
+      "attention": false,
+      "date": "03-02-2021",
+      "tech": "Sam Smith",
+      "id": 4
+    },
+    {
+      "message": "ger",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2021-05-31T17:46:54.489Z",
+      "id": 5
+    },
+    {
+      "message": "gbgbgbgbgbg",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2021-05-31T17:49:43.824Z",
+      "id": 6
+    }
+  ],
+  "techs": [
+    {
+      "id": "1",
+      "firstName": "Sam",
+      "lastName": "Smith"
+    },
+    {
+      "id": "3",
+      "firstName": "Sara",
+      "lastName": "Wilson"
+    },
+    {
+      "firstName": "Victoria",
+      "lastName": "Smith",
+      "id": "7fDTPim"
+    }
+  ]
+}
